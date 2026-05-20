@@ -2,9 +2,7 @@
 
 ## Overview
 
-This repository hosts a minimal Node.js + Express tutorial server at the repository root. When complete, the server will expose two `GET` endpoints — `/` returning a "Hello World" page and `/good-evening` returning a "Good Evening" page — and serve both responses as styled HTML documents. The page text on each endpoint is rendered using the typography defined in the attached Figma design (Inter / Semi Bold (font-weight 600) / 16px font-size / 24px line-height / color `#000000`), and each page also renders a faithful reproduction of the Figma "Support drop-down menu" card so that the design fidelity is verifiable visually.
-
-> **Checkpoint status:** At the current checkpoint, the project foundation is in place — `package.json` (declaring `express ^5.2.1`), `.gitignore`, `public/styles.css` (Figma design tokens), and `public/icons/*.svg` (four Figma-sourced glyphs) have been added. The runtime entry point (`app.js`) and the two HTML view files (`views/hello.html`, `views/good-evening.html`) are scheduled for the next checkpoint, after which the **Run** and **Test** instructions below become executable end-to-end.
+This repository hosts a minimal Node.js + Express tutorial server at the repository root. The server exposes two `GET` endpoints — `/` returning a "Hello World" page and `/good-evening` returning a "Good Evening" page — and serves both responses as styled HTML documents. The page text on each endpoint is rendered using the typography defined in the attached Figma design (Inter / Semi Bold (font-weight 600) / 16px font-size / 24px line-height / color `#000000`), and each page also renders a faithful reproduction of the Figma "Support drop-down menu" card so that the design fidelity is verifiable visually.
 
 ## Requirements
 
@@ -21,8 +19,6 @@ npm install
 
 ## Run
 
-> **Available after the next checkpoint.** `npm start` requires `app.js` (the Express bootstrap file), which is not yet present in the current checkpoint. Once `app.js` and the two view files in `views/` are added, the command below will start the Express server.
-
 Start the Express server from the repository root:
 
 ```bash
@@ -32,8 +28,6 @@ npm start
 The server starts on http://localhost:3000.
 
 ## Test
-
-> **Available after the next checkpoint.** The `curl` verifications below depend on `app.js` and the HTML views in `views/`, which are not yet present in the current checkpoint. Once those files are added (alongside the existing `package.json`, `public/styles.css`, and `public/icons/*.svg`), running `npm start` and the commands below will produce the documented responses.
 
 The project does not ship an automated test suite; the two endpoints are verified manually with `curl` (or by opening the URLs in a browser).
 
@@ -57,11 +51,9 @@ Because `curl` prints raw HTML, opening the two URLs in a browser is the recomme
 
 ## Project Structure
 
-The tree below shows the full planned project layout. Files marked **(planned — next checkpoint)** are not yet present in the current checkpoint; all other files have already been added.
-
 ```text
 .
-├── app.js                          (planned — next checkpoint)
+├── app.js
 ├── package.json
 ├── public/
 │   ├── styles.css
@@ -70,9 +62,9 @@ The tree below shows the full planned project layout. Files marked **(planned �
 │       ├── icon-envelope.svg
 │       ├── icon-pulse.svg
 │       └── icon-help-circle.svg
-├── views/                          (planned — next checkpoint)
-│   ├── hello.html                  (planned — next checkpoint)
-│   └── good-evening.html           (planned — next checkpoint)
+├── views/
+│   ├── hello.html
+│   └── good-evening.html
 ├── .gitignore
 └── README.md
 ```
