@@ -51,10 +51,13 @@ Because `curl` prints raw HTML, opening the two URLs in a browser is the recomme
 
 ## Project Structure
 
+The repository root contains the Node.js + Express tutorial files alongside one unrelated sub-project directory (`springboot-product-crud-api-master/`, described in **Unrelated Sub-Project Notice** below). The tree below shows the full repository root layout as tracked in source control. Files and directories listed in `.gitignore` (e.g., `node_modules/`, `blitzy/`) are not shown.
+
 ```text
 .
 ├── app.js
 ├── package.json
+├── package-lock.json
 ├── public/
 │   ├── styles.css
 │   └── icons/
@@ -65,6 +68,7 @@ Because `curl` prints raw HTML, opening the two URLs in a browser is the recomme
 ├── views/
 │   ├── hello.html
 │   └── good-evening.html
+├── springboot-product-crud-api-master/   (unrelated sub-project — see notice below)
 ├── .gitignore
 └── README.md
 ```

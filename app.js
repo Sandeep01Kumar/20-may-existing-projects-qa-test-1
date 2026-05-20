@@ -1,3 +1,6 @@
+const path = require('path');
+const express = require('express');
+
 /**
  * Express.js application entry point.
  *
@@ -23,11 +26,6 @@
  *   - PORT is hardcoded to 3000 (canonical Express tutorial port; intentionally
  *     distinct from the unrelated Spring Boot sub-project on port 8090).
  */
-
-'use strict';
-
-const path = require('path');
-const express = require('express');
 
 const app = express();
 const PORT = 3000;
