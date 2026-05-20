@@ -45,6 +45,23 @@ app.get('/good-evening', (req, res) => {
   res.sendFile(path.join(__dirname, 'views', 'good-evening.html'));
 });
 
+// GET /favicon.ico — silently consume the browser's automatic favicon
+// request with a 204 No Content response.
+//
+// Background:
+//   Browsers automatically request /favicon.ico on first navigation to any
+//   page, even when the HTML contains no <link rel="icon"> reference. Without
+//   a handler, Express returns a 404 and the browser logs a console error
+//   ("Failed to load resource: ... 404 (Not Found)"). The AAP §0.7.2
+//   explicitly excludes creating a favicon asset, so we do NOT add a binary
+//   favicon file or a <link rel="icon"> tag. Instead, we respond to the
+//   automatic request with 204 No Content (empty body, success status),
+//   which silences the browser-initiated 404 without introducing any new
+//   asset to the project.
+app.get('/favicon.ico', (req, res) => {
+  res.status(204).end();
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
