@@ -37,8 +37,13 @@ h1,
 }
 
 /* Menu card (Figma node 28729:233119) — 264 × hug, fill #FFFFFF, stroke #D9D9D9 0.5px, radius 16, elevation-5 shadow */
+/* box-sizing: border-box ensures the card's visible bounding box stays exactly at the Figma-specified
+   264px width regardless of how the browser rounds the 0.5px hairline border (which renders as 1 CSS
+   pixel per side at 1x device pixel ratio). The border is absorbed inside the fixed width rather than
+   added outside it, which guarantees a pixel-accurate 264px frame across all device pixel ratios. */
 .menu-card {
   width: 264px;
+  box-sizing: border-box;
   background: var(--color-surface-card);
   border: var(--border-width-card) solid var(--color-border-card);
   border-radius: var(--radius-card);
