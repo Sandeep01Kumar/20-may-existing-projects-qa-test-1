@@ -2,7 +2,9 @@
 
 ## Overview
 
-This repository hosts a minimal Node.js + Express tutorial server at the repository root. The server exposes two `GET` endpoints — `/` returning a "Hello World" page and `/good-evening` returning a "Good Evening" page — and serves both responses as styled HTML documents. The page text on each endpoint is rendered using the typography defined in the attached Figma design (Inter / Semi Bold (font-weight 600) / 16px font-size / 24px line-height / color `#000000`), and each page also renders a faithful reproduction of the Figma "Support drop-down menu" card so that the design fidelity is verifiable visually.
+This repository hosts a minimal Node.js + Express tutorial server at the repository root. When complete, the server will expose two `GET` endpoints — `/` returning a "Hello World" page and `/good-evening` returning a "Good Evening" page — and serve both responses as styled HTML documents. The page text on each endpoint is rendered using the typography defined in the attached Figma design (Inter / Semi Bold (font-weight 600) / 16px font-size / 24px line-height / color `#000000`), and each page also renders a faithful reproduction of the Figma "Support drop-down menu" card so that the design fidelity is verifiable visually.
+
+> **Checkpoint status:** At the current checkpoint, the project foundation is in place — `package.json` (declaring `express ^5.2.1`), `.gitignore`, `public/styles.css` (Figma design tokens), and `public/icons/*.svg` (four Figma-sourced glyphs) have been added. The runtime entry point (`app.js`) and the two HTML view files (`views/hello.html`, `views/good-evening.html`) are scheduled for the next checkpoint, after which the **Run** and **Test** instructions below become executable end-to-end.
 
 ## Requirements
 
@@ -19,6 +21,8 @@ npm install
 
 ## Run
 
+> **Available after the next checkpoint.** `npm start` requires `app.js` (the Express bootstrap file), which is not yet present in the current checkpoint. Once `app.js` and the two view files in `views/` are added, the command below will start the Express server.
+
 Start the Express server from the repository root:
 
 ```bash
@@ -28,6 +32,8 @@ npm start
 The server starts on http://localhost:3000.
 
 ## Test
+
+> **Available after the next checkpoint.** The `curl` verifications below depend on `app.js` and the HTML views in `views/`, which are not yet present in the current checkpoint. Once those files are added (alongside the existing `package.json`, `public/styles.css`, and `public/icons/*.svg`), running `npm start` and the commands below will produce the documented responses.
 
 The project does not ship an automated test suite; the two endpoints are verified manually with `curl` (or by opening the URLs in a browser).
 
@@ -49,11 +55,13 @@ This returns the Good Evening HTML page, which renders an `<h1>Good Evening</h1>
 
 Because `curl` prints raw HTML, opening the two URLs in a browser is the recommended way to verify the Figma typography (Inter Semi Bold 16/24) and the visual rendering of the Support drop-down menu card.
 
-## Project structure
+## Project Structure
+
+The tree below shows the full planned project layout. Files marked **(planned — next checkpoint)** are not yet present in the current checkpoint; all other files have already been added.
 
 ```text
 .
-├── app.js
+├── app.js                          (planned — next checkpoint)
 ├── package.json
 ├── public/
 │   ├── styles.css
@@ -62,9 +70,9 @@ Because `curl` prints raw HTML, opening the two URLs in a browser is the recomme
 │       ├── icon-envelope.svg
 │       ├── icon-pulse.svg
 │       └── icon-help-circle.svg
-├── views/
-│   ├── hello.html
-│   └── good-evening.html
+├── views/                          (planned — next checkpoint)
+│   ├── hello.html                  (planned — next checkpoint)
+│   └── good-evening.html           (planned — next checkpoint)
 ├── .gitignore
 └── README.md
 ```
@@ -74,7 +82,7 @@ Because `curl` prints raw HTML, opening the two URLs in a browser is the recomme
 - `GET /` — Returns the Hello World HTML page (heading text: "Hello World").
 - `GET /good-evening` — Returns the Good Evening HTML page (heading text: "Good Evening").
 
-## Design reference
+## Design Reference
 
 The page text design and the "Support drop-down menu" card on both endpoint pages follow the attached Figma file:
 
@@ -91,6 +99,6 @@ The typography token applied to all visible page text is:
 
 The Inter typeface is loaded via Google Fonts from https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap, so no binary font file is vendored in the repository.
 
-## Unrelated sub-project notice
+## Unrelated Sub-Project Notice
 
 The `springboot-product-crud-api-master/` directory is an **unrelated** Spring Boot + Java 17 + Maven + MySQL CRUD API for products. It is **not used by** this Node.js tutorial and is documented separately at `springboot-product-crud-api-master/README.md`. The Spring Boot project listens on port 8090; the Node.js tutorial listens on port 3000. The two projects can be run simultaneously on a single host without conflict.
