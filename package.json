@@ -1,7 +1,7 @@
 {
   "name": "express-hello-world",
   "version": "1.0.0",
-  "description": "Node.js + Express tutorial server with GET / and GET /good-evening endpoints styled per the attached Figma design.",
+  "description": "Minimal Node.js + Express tutorial server with two GET endpoints styled per the attached Figma design.",
   "main": "app.js",
   "type": "commonjs",
   "scripts": {
@@ -12,6 +12,5 @@
   },
   "engines": {
     "node": ">=18"
-  },
-  "private": true
+  }
 }
