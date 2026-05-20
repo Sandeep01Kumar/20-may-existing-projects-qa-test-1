@@ -1,35 +1,4 @@
-# Node.js
 node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# Environment variables
 .env
-.env.local
-.env.*.local
-
-# OS artifacts
 .DS_Store
-Thumbs.db
-
-# Editor / IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Logs and runtime data
-logs/
-*.log
-pids/
-*.pid
-*.seed
-*.pid.lock
-
-# Coverage and build output
-coverage/
-.nyc_output/
-dist/
-build/
+npm-debug.log*
